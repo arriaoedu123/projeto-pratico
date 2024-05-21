@@ -19,6 +19,33 @@ CREATE TABLE `nome_do_banco`.`pessoas`(
 
 <strong>IMPORTANTE:</strong> Não esqueça de atualizar as informações do seu servidor MySQL dentro dos códigos
 
+Em client/src/App.js, modifique a url do localhost para a url que abrirá no seu server/index.js
+<br>
+<strong>OBS:</strong> As linhas podem estar em posições diferentes
+```
+72    Axios.get("localhost:3001/pessoas").then((response) => {
+
+144   Axios.delete(`localhost:3001/delete/${id}`);
+
+153   Axios.put("localhost:3001/update", {
+
+172   Axios.post("localhost:3001/create", {
+```
+
+<br>
+
+Agora em server/index.js, modifique as informações do seu servidor MySQL
+<br>
+<strong>OBS:</strong> As linhas podem estar em posições diferentes
+```
+ 9    const db = mysql.createConnection({
+10      user: "user",
+11      host: "host",
+12      password: "password",
+13      database: "database",
+14    });
+```
+
 <br>
 
 Dessa vez faça o seguinte comando no terminal em que o projeto está aberto
